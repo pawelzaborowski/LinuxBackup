@@ -26,7 +26,7 @@ def confirm():
 
 
 def addToArchive(self, dest, backup_dirs, name='backup'):
-    time = datetime.datetime.now().strftime('%d%m%Y %H:%M')
+    time = datetime.datetime.now().strftime('%d%m%Y-%H:%M')
     with tarfile.open(dest + '/' + name + time + '.tar.gz', mode='w|gz') as archive:
         for dir in backup_dirs:
             archive.add(dir, recursive=True)
